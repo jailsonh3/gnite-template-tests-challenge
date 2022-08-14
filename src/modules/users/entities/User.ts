@@ -2,6 +2,7 @@ import {
   Column,
   CreateDateColumn,
   Entity,
+  JoinTable,
   OneToMany,
   PrimaryGeneratedColumn
 } from 'typeorm';
@@ -23,7 +24,7 @@ export class User {
   @Column()
   password: string;
 
-  @OneToMany(() => Statement, statement => statement.user)
+  @OneToMany('Statement', (statement: Statement) => statement.user)
   statement: Statement[];
 
   @CreateDateColumn()

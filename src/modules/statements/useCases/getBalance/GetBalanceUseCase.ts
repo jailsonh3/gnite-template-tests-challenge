@@ -9,7 +9,7 @@ interface IRequest {
   user_id: string;
 }
 
-interface IResponse {
+export interface IResponse {
   statement: Statement[];
   balance: number;
 }
